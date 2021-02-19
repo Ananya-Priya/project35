@@ -4,7 +4,7 @@ var bg,balloonimg1,balloonimg2;
 function preload(){
   bg=loadImage("bck.png");
   balloonimg1=loadAnimation("balloon1.png","balloon2.png","balloon3.png");
-  balloonimg2=loadAnimation("balloon1.png","balloon2.png","balloon3.png");
+
 
 
 }
@@ -25,19 +25,19 @@ background(bg);
 
     if(keyDown(LEFT_ARROW)){
         writePosition(-1,0);
-        balloon1.addAnimation('balloon1',balloonimg2)
+       
     }
     else if(keyDown(RIGHT_ARROW)){
         writePosition(1,0);
-        balloon1.addAnimation('balloon1',balloonimg2)
+        
     }
     else if(keyDown(UP_ARROW)){
         writePosition(0,-1);
-        balloon1.addAnimation('balloon1',balloonimg2)
+        balloon1.scale=balloon1.scale-0.005;
     }
     else if(keyDown(DOWN_ARROW)){
-        writePosition(0,+1);
-        balloon1.addAnimation('balloon1',balloonimg2)
+        writePosition(0,1);
+        balloon1.scale=balloon1.scale+0.005;
     }
   drawSprites();
 }
@@ -53,6 +53,6 @@ function writePosition(x,y){
 function readposition(data)
 {
 position=data.val();
-balloon.x=position.x;
-balloon.y=position.y;
+balloon1.x=position.x;
+balloon1.y=position.y;
 }
